@@ -3,6 +3,7 @@
   background-color: rgb(54, 54, 54) !important;
   color: white !important;
   text-transform: capitalize;
+  border-radius: 5px !important;
 }
 
 .aboutus-container {
@@ -18,8 +19,4 @@
   border-bottom: 10px double rgb(101, 101, 101);
   border-radius: 10px;
   padding-bottom: 10px;
-}
-
-.aboutus-accordion {
-  border-radius: 5px !important;
 }

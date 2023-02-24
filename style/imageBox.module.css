@@ -86,7 +86,7 @@
 
 
 .show img {
-  object-fit: contain;
+  /* object-fit: contain; */
   object-position: center;
   display: block;
   max-width: 60%;

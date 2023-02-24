@@ -1,5 +1,6 @@
 import { useState } from "react";
 import imageStyle from "../style/imageBox.module.css"
+import Image from "next/image";
 
 const ImgBox = ({
 	ClickedImg,
@@ -37,12 +38,16 @@ const ImgBox = ({
 	return (
 		<>
 			<div className={`${imageStyle.show} hide notselected ${imageStyle[className]}`} onClick={showHandler}>
-				<img
+					
+				<Image
+					fill
 					src={ClickedImg}
 					alt="Image previewer"
 					className={imageStyle.sontol}
 					draggable={"false"}
-				/>
+					quality={100}
+					loading="eager"
+					/>
 				<span>
 					{currentIndex + 1} / {totalCurrentIndex}
 				</span>

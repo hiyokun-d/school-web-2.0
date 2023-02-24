@@ -3,6 +3,7 @@ import { useState } from "react";
 import ImgBox from "./ImgBox";
 
 import image from "../style/imageList.module.css"
+import Image from "next/image";
 
 const ImgPreviewer = ({
 	ImageURL = [],
@@ -84,9 +85,11 @@ const ImgPreviewer = ({
 						key={data}
 						className={`notselected ${
 							className_div ? className_div : image["imgPreviewer-wrapper"]
-						}`}
+						} containerList`}
 					>
-						<img
+						<Image
+							width={350}
+							height={350}
 							src={`${data}`}
 							alt="Smansa Image by hiyo"
 							onClick={() => {
@@ -94,6 +97,7 @@ const ImgPreviewer = ({
 							}}
 							className={className_img ? className_img : image['imgPreviewer-image']}
 							draggable={"false"}
+							loading="lazy"
 						/>
 					</div>
 				);

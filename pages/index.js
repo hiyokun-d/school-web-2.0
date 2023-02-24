@@ -7,6 +7,7 @@ import imageList from "../public/imagelist.json";
 
 import home from "../style/home.module.css";
 import CustomHead from "../components/CustomHead.js";
+import Image from "next/image.js";
 
 const HomePage = () => {
     const [openCloseOne, setOpenCloseOne] = useState(true);
@@ -92,7 +93,7 @@ const HomePage = () => {
           sudah saya buat gitu aja makasih, saya tau kalian tidak akan baca ini semua jadi
           selamat ber-eksperiment :)
       */}
-            
+
             <CustomHead />
 
             <div ref={container} className={`${home['home-title-container']} notSelected`}>
@@ -200,12 +201,19 @@ const HomePage = () => {
             <div className={`${home['home-navbar']} notSelected`}>
                 <ul>
                     <li>
-                        <img src={imageList.icon.danaBos} alt="Hello" />
+                        <Image
+                            src={imageList.icon.danaBos} alt="Hello"
+                            width={100}
+                            height={100}
+                        />
                         <p>Dana bos</p>
                     </li>
 
                     <li>
-                        <img src={imageList.icon.bukuTamu} alt="Hello" />
+                        <Image width={100}
+                            height={100}
+                            src={imageList.icon.bukuTamu} alt="Hello"
+                        />
                         <p>Buku Tamu</p>
                     </li>
 
@@ -251,7 +259,9 @@ const HomePage = () => {
                         <div className={`${home['home-members-info-container']}`}>
                             <div className={`${home['home-members-info']}`}>
                                 <div className={`${home['image-example']}`}>
-                                    <img
+                                    <Image
+                                        width={262}
+                                        height={346}
                                         src={imageList.officials.image1}
                                         alt="Test bruh"
                                         draggable={"false"}
@@ -263,7 +273,9 @@ const HomePage = () => {
 
                             <div className={`${home['home-members-info']}`}>
                                 <div className={`${home['image-example']}`}>
-                                    <img
+                                    <Image
+                                        width={262}
+                                        height={346}
                                         src={imageList.officials.image2}
                                         alt="Test bruh"
                                         draggable={"false"}
@@ -275,7 +287,9 @@ const HomePage = () => {
 
                             <div className={`${home['home-members-info']}`}>
                                 <div className={`${home['image-example']}`}>
-                                    <img
+                                    <Image
+                                        width={262}
+                                        height={346}
                                         src={imageList.officials.image3}
                                         alt="Test bruh"
                                         draggable={"false"}
@@ -291,7 +305,9 @@ const HomePage = () => {
                         <div className={`${home['home-members-info-container']}`}>
                             <div className={`${home['home-members-info']}`}>
                                 <div className={`${home['image-example']}`}>
-                                    <img
+                                    <Image
+                                        width={262}
+                                        height={346}
                                         src={imageList.officials.image4}
                                         alt="Test bruh"
                                         draggable={"false"}
@@ -303,7 +319,9 @@ const HomePage = () => {
 
                             <div className={`${home['home-members-info']}`}>
                                 <div className={`${home['image-example']}`}>
-                                    <img
+                                    <Image
+                                        width={262}
+                                        height={346}
                                         src={imageList.officials.image5}
                                         alt="Test bruh"
                                         draggable={"false"}
@@ -315,7 +333,9 @@ const HomePage = () => {
 
                             <div className={`${home['home-members-info']}`}>
                                 <div className={`${home['image-example']}`}>
-                                    <img
+                                    <Image
+                                        width={262}
+                                        height={346}
                                         src={imageList.officials.image6}
                                         alt="Test bruh"
                                         draggable={"false"}
@@ -386,7 +406,9 @@ const HomePage = () => {
                         }}
                         draggable={"false"}
                     >
-                        <img
+                        <Image
+                            width={50}
+                            height={50}
                             src={imageList.icon.facebook}
                             alt={"hiyo"}
                             draggable={"false"}
@@ -406,7 +428,9 @@ const HomePage = () => {
                         }}
                         draggable={"false"}
                     >
-                        <img
+                        <Image
+                            width={50}
+                            height={50}
                             src={imageList.icon.instagram}
                             alt={"nih"}
                             draggable={"false"}
@@ -426,7 +450,9 @@ const HomePage = () => {
                         }}
                         draggable={"false"}
                     >
-                        <img
+                        <Image
+                            width={50}
+                            height={50}
                             src={imageList.icon.youtube}
                             alt={"boss"}
                             draggable={"false"}
@@ -525,7 +551,7 @@ const HomePage = () => {
                             <span>Send</span>
                         </button>
                     </form>
-                </div> 
+                </div>
             </div>
         </>
     );
