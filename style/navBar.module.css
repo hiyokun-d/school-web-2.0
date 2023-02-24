@@ -1,0 +1,134 @@
+.navcontainer {
+  background-color: #2e2e2e;
+  display: flex;
+  justify-content: center;
+  transition: all 500ms ease-in-out;
+  padding-bottom: 10px;
+  border-bottom: 5px solid rgb(190, 190, 190);
+  height: auto;
+}
+
+.navcontainer ul {
+  display: flex;
+  list-style: none;
+  text-align: center;
+}
+
+.navcontainer ul li:not(:first-child) {
+  margin-left: 20px;
+}
+
+.navcontainer ul li a {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 19.6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 200ms ease-in-out, font-size 100ms ease-in-out,
+    text-shadow 250ms ease-in-out;
+}
+
+.navcontainer ul li a:hover {
+  color: #d6d6d6;
+  font-size: 20px;
+  text-shadow: 3px 3px 0px #000000;
+  text-anchor: middle;
+}
+
+.navcontainer ul li a:active {
+  font-size: 15px;
+  text-shadow: 0 -1px 5px #8aadf8;
+}
+/* ---------------------------------------------------------------------------------------------------------------- */
+
+/**NAVIGATION BAR WHEN OUT SCREEN */
+
+/* .navoutscreen.outscreen {
+  position: fixed;
+  width: 100vw;
+
+  overflow: hidden;
+  border-radius: 0px 5px 5px 0px;
+  border-right: 5px solid rgb(190, 190, 190);
+  border-bottom: 5px solid rgb(190, 190, 190);
+}
+
+.navoutscreen.outscreen ul li {
+  transform: translateX(-500px);
+}
+
+.navoutscreen.outscreen .navbarIcon {
+  transform: translateX(-290px) translateY(30px)
+} */
+
+.navoutscreen {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  transition: all 200ms ease-in-out;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(42, 42, 42);
+  border-radius: 0px 0px 15px 15px;
+  height: 30px;
+  overflow: hidden;
+  z-index: 1000;
+  opacity: 0.3;
+  letter-spacing: -5px;
+}
+
+.navoutscreen:hover {
+  height: 70px;
+  opacity: 1;
+  border-bottom: 5px solid rgb(190, 190, 190);
+  background-color: #373737;
+  letter-spacing: normal;
+}
+
+.navoutscreen.outscreen {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transform: translateY(0px);
+}
+
+.navoutscreen.inscreen {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transform: translateY(-100px);
+}
+
+.navoutscreen ul {
+  display: flex;
+  list-style: none;
+  text-align: center;
+}
+
+.navoutscreen ul li:not(:first-child) {
+  margin-left: 20px;
+}
+
+.navoutscreen ul li a/* , .navoutscreen div */ {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 19.6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 200ms ease-in-out, font-size 100ms ease-in-out,
+    text-shadow 250ms ease-in-out;
+}
+
+.navoutscreen ul li a:hover {
+  color: #d6d6d6;
+  font-size: 20px;
+  text-shadow: 3px 3px 0px #000000;
+  text-anchor: middle;
+}
+
+.navoutscreen ul li a:active {
+  font-size: 15px;
+  text-shadow: 0 -1px 5px #8aadf8;
+
+}
+
+

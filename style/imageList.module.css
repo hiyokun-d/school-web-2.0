@@ -1,0 +1,38 @@
+.imgPreviewer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgPreviewer-container .imgPreviewer-wrapper {
+  padding: 5px;
+  z-index: 1;
+}
+
+.imgPreviewer-container .imgPreviewer-wrapper:hover {
+  z-index: 2;
+}
+
+.imgPreviewer-container .imgPreviewer-wrapper .imgPreviewer-image {
+  border: 3px solid rgb(161, 246, 82);
+  box-shadow: 2px 5px 10px black;
+  border-radius: 5px;
+  filter: blur(5px);
+  max-height: 500px;
+  width: auto;
+  transition: transform 0.2s cubic-bezier(.17,.67,.59,1.51), border 0.5s ease, box-shadow 0.5s ease, filter 1s ease;
+}
+
+.imgPreviewer-container .imgPreviewer-wrapper img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.imgPreviewer-wrapper .imgPreviewer-image:hover {
+  transform: scale(1.2);
+  border: 5px solid rgb(153, 249, 228);
+  box-shadow: 15px 15px 10px rgb(61, 126, 0);
+  filter: blur(0px);
+  cursor: pointer;
+}

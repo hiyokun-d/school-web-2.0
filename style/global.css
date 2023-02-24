@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
+  background-color: rgb(74, 74, 74);
+  overflow-x: hidden;
+}
+
+.notselected {
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  color: #2eb4f2;
+  font-weight: 1500px;
+  text-shadow: 3px 1px 2px black;
+}
+

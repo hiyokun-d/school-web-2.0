@@ -1,0 +1,61 @@
+{
+  "icon": {
+    "danaBos": "/images/icon/twotone_menu_book_black_48dp.png",
+    "bukuTamu": "/images/icon/book-add-solid-48.png",
+    "facebook": "/images/icon/facebook-logo.png",
+    "instagram": "/images/icon/instagram-logo.png",
+    "whatsapp": "/images/icon/whatsapp-logo.png",
+    "youtube": "/images/icon/youtube-logo.png",
+    "twitter": "/images/icon/twitter-logo.png"
+  },
+
+  "officials": {
+    "image1": "https://picsum.photos/262/346?random=1",
+    "image2": "https://picsum.photos/262/346?random=2",
+    "image3": "https://picsum.photos/262/346?random=3",
+    "image4": "https://picsum.photos/262/346?random=4",
+    "image5": "https://picsum.photos/262/346?random=5",
+    "image6": "https://picsum.photos/262/346?random=6"
+  },
+
+  "slider": {
+    "slider1": "/images/slider/slider.jpg",
+    "slider2": "/images/slider/slider2.jpg",
+    "slider3": "/images/slider/slider3.jpg"
+  },
+
+  "imageCollections": [
+    "https://picsum.photos/562/346?random=1",
+    "https://picsum.photos/362/346?random=2",
+    "https://picsum.photos/152/346?random=3",
+    "https://picsum.photos/312/346?random=4",
+    "https://picsum.photos/422/346?random=5",
+    "https://picsum.photos/166/346?random=6",
+    "https://picsum.photos/266/346?random=7",
+    "https://picsum.photos/222/346?random=8",
+    "https://picsum.photos/182/346?random=9",
+    "https://picsum.photos/282/346?random=10",
+    "https://picsum.photos/264/346?random=11",
+    "https://picsum.photos/263/346?random=12",
+    "https://picsum.photos/261/346?random=13",
+    "https://picsum.photos/312/346?random=14",
+    "https://picsum.photos/123/346?random=15",
+    "https://picsum.photos/213/346?random=16",
+    "https://picsum.photos/222/346?random=17",
+    "https://picsum.photos/332/346?random=18",
+    "https://picsum.photos/319/346?random=19",
+    "https://picsum.photos/432/346?random=20",
+    "https://picsum.photos/400/346?random=21",
+    "https://picsum.photos/464/346?random=22",
+    "https://picsum.photos/345/346?random=23",
+    "https://picsum.photos/330/346?random=24",
+    "https://picsum.photos/310/346?random=25",
+    "https://picsum.photos/360/346?random=26",
+    "https://picsum.photos/384/346?random=27",
+    "https://picsum.photos/453/346?random=29",
+    "https://picsum.photos/462/346?random=29",
+    "https://picsum.photos/321/346?random=30",
+    "https://picsum.photos/432/346?random=31",
+    "https://picsum.photos/456/346?random=32"
+  ]
+}

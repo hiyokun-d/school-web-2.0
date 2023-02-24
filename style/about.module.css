@@ -1,0 +1,25 @@
+.aboutus-accordion {
+  border: 1px solid rgb(214, 214, 214);
+  background-color: rgb(54, 54, 54) !important;
+  color: white !important;
+  text-transform: capitalize;
+}
+
+.aboutus-container {
+  padding: 0px 10px 0px 10px;
+  border: 5px solid rgb(152, 179, 171);
+  height: 100vh;
+}
+
+.aboutus-container > h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  border-bottom: 10px double rgb(101, 101, 101);
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+
+.aboutus-accordion {
+  border-radius: 5px !important;
+}
