@@ -8,6 +8,7 @@ import imageList from "../public/imagelist.json";
 import home from "../style/home.module.css";
 import CustomHead from "../components/CustomHead.js";
 import Image from "next/image.js";
+import Greetings from "../components/Greetings.js";
 
 const HomePage = () => {
     const [openCloseOne, setOpenCloseOne] = useState(true);
@@ -95,7 +96,7 @@ const HomePage = () => {
       */}
 
             <CustomHead />
-
+            <Greetings message={"Home!"}/>
             <div ref={container} className={`${home['home-title-container']} notSelected`}>
                 <div className={`${home['home-text']} notSelected ${home.one}`}>
                     <h2 className={`${openCloseOne ? home.open : home.close} ${home.one}`}>
@@ -468,6 +469,7 @@ const HomePage = () => {
                 </div>
             </div>
 
+            {/* contacts */}
             <div className={`${home['home-contact']}`}>
                 <h3>PERTANYAAN, SARAN, DAN KRITIK</h3>
                 <h1>SMA NEGERI 1 BANTAENG</h1>

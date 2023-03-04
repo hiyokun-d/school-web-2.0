@@ -5,6 +5,7 @@ import Gallery from "../../style/gallery.module.css"
 
 import imageList from "../../public/imagelist.json";
 import CustomHead from '../../components/CustomHead';
+import Greetings from '../../components/Greetings';
 
 export default function gallery_hiyo() {
     return (

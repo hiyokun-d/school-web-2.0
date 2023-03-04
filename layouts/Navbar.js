@@ -45,7 +45,7 @@ export default function Navbar({ children }) {
                         <Link href={"/download"}>Download</Link>
                     </li>
                     <li>
-                        <Link href={"/contact"}>Our Contact</Link>
+                        <Link href={"/there-is-contacts/contacts"}>Our Contact</Link>
                     </li>
                 </ul>
             </div>
@@ -74,7 +74,7 @@ export default function Navbar({ children }) {
                         <Link href={"/download"}>Download</Link>
                     </li>
                     <li>
-                        <Link href={"/contact"}>Our Contact</Link>
+                        <Link href={"/there-is-contacts/contacts"}>Our Contact</Link>
                     </li>
                 </ul>
             </div>

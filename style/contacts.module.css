@@ -1,0 +1,242 @@
+.container {
+	width: 100vw;
+	height: 90vh;
+	/* border: 1px solid rgb(255, 0, 0); */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contact {
+	position: absolute;
+	z-index: 0;
+	height: 501px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: white;
+	padding: 20px;
+	padding-bottom: 10px;
+	max-height: 1200px;
+	box-shadow: inset 0 0 52px black;
+	width: 420px;
+	border-radius: 15px;
+}
+
+.contact h3 {
+	font-weight: 50;
+	font-style: italic;
+	color: white;
+}
+
+.contact > p {
+	width: 850px;
+}
+
+.contact > h1,
+.contact > p,
+.contact > .contact-mail-message {
+	margin-top: -10px;
+}
+
+.contact .contact-mail-message input {
+	background-color: rgb(208, 233, 255);
+	border-radius: 5px;
+	padding-left: 5px;
+	height: 50px;
+	width: 200px;
+	color: black;
+
+	transition: width 0.2s ease, color 0.5s ease,
+		background-color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+		margin-right 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+	border: 5px double rgb(234, 255, 245);
+	margin-top: 5px;
+}
+
+.contact .contact-mail-message input::placeholder {
+	color: rgb(86, 86, 86);
+	transition: color 0.2s ease-in-out;
+}
+
+.contact .contact-mail-message input:hover {
+	background-color: rgb(89, 100, 110);
+	width: 300px;
+	color: wheat;
+}
+
+.contact .contact-mail-message input:not(:placeholder-shown) {
+	width: -moz-fit-content;
+	width: fit-content;
+}
+
+.contact .contact-mail-message input:focus {
+	background-color: rgb(89, 100, 110);
+	width: 500px;
+	color: white;
+	/* transform: translateX(-100px); */
+	margin-right: 50px;
+}
+
+.contact .contact-mail-message input:focus input::placeholder {
+	color: white;
+}
+
+.contact .contact-mail-message textarea {
+	height: 70px;
+	max-width: 800px;
+	max-height: 250px;
+	width: 200px;
+	min-width: 200px;
+	transition: width 0.2s ease, color 0.5s ease,
+		background-color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+		margin-right 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+		height 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	background-color: rgb(131, 131, 131);
+	border-radius: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: 5px;
+	border: 5px double rgb(203, 203, 203);
+	min-height: 70px;
+	text-transform: capitalize;
+	resize: vertical;
+}
+
+.contact .contact-mail-message textarea:hover {
+	width: 300px;
+	background-color: rgb(25, 25, 25);
+	color: white;
+}
+
+.contact .contact-mail-message textarea::placeholder {
+	color: rgb(39, 39, 39);
+	transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact .contact-mail-message textarea:hover::placeholder {
+	color: rgb(139, 139, 139);
+}
+
+.contact .contact-mail-message textarea:focus {
+	width: 600px;
+	height: 100px;
+	background-color: rgb(25, 25, 25);
+	color: white;
+	outline-color: transparent;
+}
+
+.contact .contact-mail-message textarea:focus::placeholder {
+	color: rgb(255, 255, 255);
+}
+
+.contact .contact-mail-message form {
+	width: 1000px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.contact .contact-mail-message button {
+	font-family: inherit;
+	font-size: 20px;
+	background: royalblue;
+	color: white;
+	padding: 0.7em 1em;
+	padding-left: 0.9em;
+	display: flex;
+	align-items: center;
+	border: none;
+	border-radius: 16px;
+	overflow: hidden;
+	transition: all 0.2s;
+}
+
+.contact .contact-mail-message button span {
+	display: block;
+	margin-left: 0.3em;
+	transition: all 0.3s ease-in-out;
+}
+
+.contact .contact-mail-message button svg {
+	display: block;
+	transform-origin: center center;
+	transition: transform 0.3s ease-in-out;
+}
+
+.contact .contact-mail-message button:hover .contact-svg-wrapper {
+	animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.contact .contact-mail-message button:hover svg {
+	transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.contact .contact-mail-message button:hover span {
+	transform: translateX(5em);
+}
+
+.contact .contact-mail-message button:active svg {
+	transform: translateX(10em);
+	transition: transform 0.4s cubic-bezier(0.39, -0.39, 0.37, 1.46);
+}
+
+.contact .contact-mail-message button:active {
+	transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+	from {
+		transform: translateY(0.1em);
+	}
+
+	to {
+		transform: translateY(-0.1em);
+	}
+}
+
+.background {
+	z-index: 1;
+	width: 520px;
+	height: 520px;
+	border-radius: 15px;
+	background-color: rgb(74, 74, 74);
+	position: absolute;
+	animation: moveIn 2.5s ease both;
+	animation-delay: 4.5s;
+}
+
+@keyframes moveIn {
+	3% {
+		border: 1px double white;
+		box-shadow: 0 0 52px rgb(250, 182, 182);
+	}
+	
+	25% {
+		border: 5px solid white;
+		box-shadow: 0 0 72px white;
+	}
+
+	30% {
+		border: 8px solid white;
+	}
+
+	50% {
+		border: 4px solid white;
+		transform: translateX(-300px);
+	}
+
+	70% {
+		border: 0px solid white;
+		transform: translateX(-500px);
+	}
+
+	100% {
+		border: 0px solid white;
+		transform: translateX(-700px);
+	}
+}
