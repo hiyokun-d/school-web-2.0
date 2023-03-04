@@ -96,7 +96,7 @@ const HomePage = () => {
       */}
 
             <CustomHead />
-            <Greetings message={"Home!"}/>
+            <Greetings message={"Welcome!"}/>
             <div ref={container} className={`${home['home-title-container']} notSelected`}>
                 <div className={`${home['home-text']} notSelected ${home.one}`}>
                     <h2 className={`${openCloseOne ? home.open : home.close} ${home.one}`}>
