@@ -1,4 +1,4 @@
-# TODOLIST
+# TODOLIST (feature suggestions)
 
  [ ] make a custom Loader for
     1. Images  [ * ]
