@@ -8,10 +8,7 @@ import about from "../../style/about.module.css"
 const AboutusPage = () => {
     const [expanded, setExpand] = useState("");
 
-    const handleChange =
-        (Panel) => (event, newExpanded) => {
-            setExpand(newExpanded ? Panel : false);
-        };
+    const handleChange = (Panel) => (event, newExpanded) => setExpand(newExpanded ? Panel : false);
     return (
         <>
 

@@ -3,9 +3,9 @@ import React from 'react'
 import ImgPreviewer from '../../components/ImgPreviewer'
 import Gallery from "../../style/gallery.module.css"
 
-import imageList from "../../public/imagelist.json";
 import CustomHead from '../../components/CustomHead';
-import Greetings from '../../components/Greetings';
+import { Images } from '../../utils/firebase';
+import { imageCollections } from "../../public/imagelist.json"
 
 export default function gallery_hiyo() {
     return (
@@ -15,7 +15,7 @@ export default function gallery_hiyo() {
                 <ImgPreviewer
                     className_div={`${Gallery['gallery-img-div']}`}
                     className_img={`${Gallery['gallery-img']}`}
-                    ImageURL={imageList.imageCollections}
+                    src={Images}
                 />
             </div>
         </>

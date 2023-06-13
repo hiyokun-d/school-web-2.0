@@ -3,26 +3,21 @@ import styles from "../../style/contacts.module.css";
 import Greetings from "../../components/Greetings";
 
 const Contacts = () => {
-	const [animationPlay, setAnimationPlay] = useState(true);
 
-	const changeAnimation = setTimeout(() => {
-		setAnimationPlay(false);
-		clearTimeout(changeAnimation);
-	}, 3500);
+
+	/* if you want to change the open animation the box
+	   you can change it in css contacts and search for background class
+	   then change the animation delay value
+	*/
 
 	return (
 		<div className={styles.container}>
-			{/* <div className={`notSelected ${styles.textContainer} ${animationPlay ? styles.open : styles.close}`}>
-				<span className={`notSelected ${styles.rectangleText} ${animationPlay ? styles.open : styles.close}`}>
-					Hello There!
-				</span>
-      </div> */}
-      
-      <Greetings />
-      
-      <div className={styles.background} />
+			<Greetings message={"Contact"} />
 
-      <div className={`${styles["contact"]}`}>
+
+			<div className={styles.background} />
+
+			<div className={`${styles["contact"]}`}>
 				{/* mailto:mdava3776@gmail.com?subject={your-subject}&body=body */}
 				<div className={`${styles["contact-mail-message"]}`}>
 					<form
@@ -30,52 +25,52 @@ const Contacts = () => {
 						method="GET"
 						encType={"text/plain"}
 					>
-						<p>
+						<div>
 							<label>
 								email
-								<br />
-								<input
-									type="email"
-									required={true}
-									placeholder={"hiyo_ganteng@gmail.com"}
-									name={"from"}
-									minLength={5}
-									size={40}
-								/>
 							</label>
-						</p>
-						<p>
+							<br />
+							<input
+								type="email"
+								required={true}
+								placeholder={"hiyo_ganteng@gmail.com"}
+								name={"from"}
+								minLength={5}
+								size={40}
+							/>
+						</div>
+						<div>
 							<label>
 								subjek pertanyaan
 								<br />
-								<input
-									type="text"
-									required={false}
-									placeholder={"siapa sih hiyo ini??"}
-									name={"subject"}
-									minLength={5}
-									maxLength={250}
-									size={40}
-								/>
 							</label>
-						</p>
-						<p>
+							<input
+								type="text"
+								required={false}
+								placeholder={"siapa sih hiyo ini??"}
+								name={"subject"}
+								minLength={5}
+								maxLength={250}
+								size={40}
+							/>
+						</div>
+						<div>
 							<label>
 								Pesan atau pertanyaan
 								<br />
-								<textarea
-									name="body"
-									cols={100}
-									rows={10}
-									maxLength={1080}
-									autoComplete={"true"}
-									autoCapitalize={"true"}
-									placeholder={
-										"SUMPAH HIYO NIH SIAPA DARITADI DI SEBUT MULU LOH"
-									}
-								/>
 							</label>
-						</p>
+							<textarea
+								name="body"
+								cols={100}
+								rows={10}
+								maxLength={1080}
+								autoComplete={"true"}
+								autoCapitalize={"true"}
+								placeholder={
+									"SUMPAH HIYO NIH SIAPA DARITADI DI SEBUT MULU LOH"
+								}
+							/>
+						</div>
 						<button>
 							<div className={`${styles["contact-svg-wrapper-1"]}`}>
 								<div className={`${styles["contact-svg-wrapper"]}`}>
@@ -97,11 +92,11 @@ const Contacts = () => {
 						</button>
 					</form>
 				</div>
-      </div>
-      
-      <div className={styles["another-social-media"]}>
-        
-      </div>
+			</div>
+
+			<div className={styles["another-social-media"]}>
+
+			</div>
 		</div>
 	);
 };

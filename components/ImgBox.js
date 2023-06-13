@@ -1,6 +1,7 @@
 import { useState } from "react";
 import imageStyle from "../style/imageBox.module.css"
 import Image from "next/image";
+import Loading from "./Loading";
 
 const ImgBox = ({
 	ClickedImg,
@@ -11,6 +12,7 @@ const ImgBox = ({
 	totalCurrentIndex,
 }) => {
 	const [className, setClass] = useState("")
+	const [load, setImageLoaded] = useState(false)
 	const showHandler = (e) => {
 		if (
 			e.target.classList.contains("hide") &&
@@ -35,18 +37,28 @@ const ImgBox = ({
 			handleRotationRight();
 		}
 	};
+
+	const handleLoadComplete = () => {
+		setImageLoaded(true)
+	}
+
+	const handleLoadError = (event) => {
+		console.log("Image failed to load:", event.target.src);
+	};
 	return (
-		<>
-			<div className={`${imageStyle.show} hide notselected ${imageStyle[className]}`} onClick={showHandler}>
-					
-				<Image
-					fill
-					src={ClickedImg}
-					alt="Image previewer"
-					className={imageStyle.sontol}
-					draggable={"false"}
-					quality={100}
-					loading="eager"
+		<div className={`${imageStyle.show} hide notselected`} onClick={showHandler}>
+			<div className={`${imageStyle.container} hide notselected ${imageStyle[className]}`}>
+				<Loading ElementComplete={load} />
+					<Image
+						fill
+						src={ClickedImg}
+						alt="Image previewer"
+						className={imageStyle.sontol}
+						draggable={"false"}
+						quality={100}
+						loading="eager"
+						onError={handleLoadError}
+						onLoadingComplete={handleLoadComplete}
 					/>
 				<span>
 					{currentIndex + 1} / {totalCurrentIndex}
@@ -86,7 +98,7 @@ const ImgBox = ({
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

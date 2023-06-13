@@ -1,11 +1,9 @@
 .container {
-	width: 100vw;
-	height: 90vh;
-	/* border: 1px solid rgb(255, 0, 0); */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
+	position: fixed;
+	z-index: 100;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .textContainer {
@@ -137,4 +135,3 @@
 		opacity: 0;
 	}
 }
-

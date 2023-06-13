@@ -207,7 +207,7 @@
 	background-color: rgb(74, 74, 74);
 	position: absolute;
 	animation: moveIn 2.5s ease both;
-	animation-delay: 4.5s;
+	animation-delay: 2.5s;
 }
 
 @keyframes moveIn {

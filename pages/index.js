@@ -20,7 +20,7 @@ const HomePage = () => {
     const container = useRef(null);
 
     let [numHandler, setNumHandler] = useState(1);
-
+    
     useEffect(() => {
         const element_one = one.current;
         const element_two = two.current;
@@ -33,13 +33,10 @@ const HomePage = () => {
                 timeout = 5500;
             }
 
-            if (timeout) {
-                setTimeout(() => {
-                    setNumHandler((prev) => (prev + 1) % 3);
-                }, timeout);
-            } else {
+            if (timeout)
+                setTimeout(setNumHandler((prev) => (prev + 1) % 3), timeout);
+            else
                 setNumHandler((prev) => (prev + 1) % 3);
-            }
         }, 6000);
     }, []);
 
@@ -199,36 +196,7 @@ const HomePage = () => {
             {/* TODO: MAKE NEW PAGE FOR "DANA BOS" ALSO "BUKU TAMU" AND CHANGE THEM TO LINK FOR SOME CLICK
                 and change the logo for "BUKU TAMU"
       */}
-            <div className={`${home['home-navbar']} notSelected`}>
-                <ul>
-                    <li>
-                        <Image
-                            src={imageList.icon.danaBos} alt="Hello"
-                            width={100}
-                            height={100}
-                        />
-                        <p>Dana bos</p>
-                    </li>
 
-                    <li>
-                        <Image width={100}
-                            height={100}
-                            src={imageList.icon.bukuTamu} alt="Hello"
-                        />
-                        <p>Buku Tamu</p>
-                    </li>
-
-                    {/* <li>
-            <div className={`${home['image-example']}`}>example image 3</div>
-            <p>Heaven</p>
-          </li> */}
-
-                    {/* <li>
-            <div className={`${home['image-example']}`}>example image 3</div>
-            <p>testElement</p>
-          </li> */}
-                </ul>
-            </div>
 
             <div className={`${home['home-members-container']}`}>
                 <h3>TENAGA PENGAJAR DAN PENDIDIK PROFESIONAL</h3>
@@ -381,7 +349,7 @@ const HomePage = () => {
                 </div>
 
                 <div className={`${home['home-image-collections']}`}>
-                    <ImgPreviewer ImageURL={imageList.imageCollections} maxShowing={25} />
+                    <ImgPreviewer maxShowing={25} />
                 </div>
             </div>
 
@@ -490,6 +458,7 @@ const HomePage = () => {
                         <p>
                             <label>
                                 email
+                                </label>
                                 <br />
                                 <input
                                     type="email"
@@ -499,11 +468,11 @@ const HomePage = () => {
                                     minLength={5}
                                     size={40}
                                 />
-                            </label>
                         </p>
                         <p>
                             <label>
                                 subjek pertanyaan
+                                </label>
                                 <br />
                                 <input
                                     type="text"
@@ -514,11 +483,11 @@ const HomePage = () => {
                                     maxLength={250}
                                     size={40}
                                 />
-                            </label>
                         </p>
                         <p>
                             <label>
                                 Pesan atau pertanyaan
+                                </label>
                                 <br />
                                 <textarea
                                     name="body"
@@ -531,7 +500,6 @@ const HomePage = () => {
                                         "SUMPAH HIYO NIH SIAPA DARITADI DI SEBUT MULU LOH"
                                     }
                                 />
-                            </label>
                         </p>
                         <button>
                             <div className={`${home['home-svg-wrapper-1']}`}>

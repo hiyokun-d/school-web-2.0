@@ -1,0 +1,197 @@
+.main {
+    text-align: center;
+  overflow: hidden;
+  animation: main 1s ease-in-out forwards;
+}
+
+.main h1 {
+  position: absolute;
+}
+
+@keyframes main {
+  0% {
+    filter: blur(10px);
+  }
+  50% {
+    filter: blur(5px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+.word {
+  font-size: 50px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 20px;
+  animation: margin-aniamtion 1s cubic-bezier(.56,0,.19,1.5) forwards;
+}
+
+@keyframes margin-aniamtion {
+  0% {
+    margin-left: 500px;
+  }
+  100% {
+    margin-left: 20px;
+  }
+}
+
+
+.l {
+  animation: L-animation 1s ease-in-out infinite;
+}
+
+@keyframes L-animation {
+  0% {
+    transform: translateY(0px);
+    color: #d2aaff;
+  }
+  50% {
+    transform: translateY(10px);
+    color: rgb(169, 255, 172);
+  }
+  100% {
+    transform: translateY(0px);
+    color: rgb(255, 159, 159);
+  }
+}
+
+.o {
+  animation: O-animation 1s cubic-bezier(0.07, 0.8, 1, 0.37) infinite;
+}
+
+@keyframes O-animation {
+  0% {
+    text-shadow: 0px 5px 20px rgb(255, 154, 154);
+    transform: matrix(1, 0, 0, 1, 0, 0) skew(0deg, 0deg);
+    font-weight: lighter;
+  }
+  50% {
+    text-shadow: 5px 10px 1px rgb(95, 95, 95);
+    transform: matrix(1, 0, 0, 1, 0, 0) skew(30deg, 0deg);
+    font-weight: bolder;
+  }
+  100% {
+    text-shadow: 0px 5px 1px rgb(255, 0, 13);
+    transform: matrix(1, 0, 0, 1, 0, 0) skew(0deg, 0deg);
+    font-weight: lighter;
+  }
+}
+
+.a {
+  animation: A-animation 1.1s ease-in-out infinite;
+}
+
+@keyframes A-animation {
+  0% {
+    transform: translateY(0px);
+    color: #d2aaff;
+  }
+  50% {
+    transform: translateY(10px);
+    color: rgb(169, 255, 172);
+  }
+  100% {
+    transform: translateY(0px);
+    color: rgb(255, 159, 159);
+  }
+}
+
+.d {
+  animation: D-animation 1s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes D-animation {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    text-shadow: 10px 0px 20px rgb(68, 87, 255),
+      -10px 0px 10px rgb(163, 250, 154), 0px 10px 25px rgb(255, 87, 3),
+      0px -10px 15px rgb(255, 3, 87);
+  }
+
+  10% {
+    transform: translateY(10px) rotate(10deg);
+    text-shadow: 10px 0px 5px rgb(68, 87, 255), -10px 0px 5px rgb(163, 250, 154),
+      0px 10px 25px rgb(255, 87, 3), 0px -10px 5px rgb(255, 3, 87);
+  }
+
+  30% {
+    tranform: translateY(-50px) rotate(30deg);
+    text-shadow: 10px 0px 1px rgb(68, 87, 255), -10px 0px 1px rgb(163, 250, 154),
+      0px 10px 25px rgb(255, 87, 3), 0px -10px 1px rgb(255, 3, 87);
+  }
+
+  50% {
+    transform: translateY(10px);
+    text-shadow: 10px 0px 20px rgb(68, 87, 255),
+      -10px 0px 10px rgb(163, 250, 154), 0px 10px 25px rgb(255, 87, 3),
+      0px -10px 15px rgb(255, 3, 87);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    text-shadow: 10px 0px 6px rgb(68, 87, 255), -10px 0px 6px rgb(163, 250, 154),
+      0px 10px 25px rgb(255, 87, 3), 0px -10px 6px rgb(255, 3, 87);
+  }
+}
+
+.i {
+  animation: I-animation 1.3s ease-in-out infinite;
+}
+
+@keyframes I-animation {
+  0% {
+    transform: translateY(0px);
+    color: #d2aaff;
+  }
+  50% {
+    transform: translateY(10px);
+    color: rgb(169, 255, 172);
+  }
+  100% {
+    transform: translateY(0px);
+    color: rgb(255, 159, 159);
+  }
+}
+
+.n {
+  animation: N-animation 1.2s ease-in-out infinite;
+}
+
+@keyframes N-animation {
+  0% {
+    transform: translateY(0px);
+    color: #d2aaff;
+  }
+  50% {
+    transform: translateY(10px);
+    color: rgb(169, 255, 172);
+  }
+  100% {
+    transform: translateY(0px);
+    color: rgb(255, 159, 159);
+  }
+}
+
+.g {
+  animation: G-animation 1.1s ease-in-out infinite;
+}
+
+@keyframes G-animation {
+  0% {
+    transform: translateY(0px);
+    color: #d2aaff;
+  }
+  50% {
+    transform: translateY(10px);
+    color: rgb(169, 255, 172);
+  }
+  100% {
+    transform: translateY(0px);
+    color: rgb(255, 159, 159);
+  }
+}

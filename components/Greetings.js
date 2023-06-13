@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "../style/greetings.module.css"
 
 /**
@@ -12,18 +12,32 @@ import styles from "../style/greetings.module.css"
 
 export default function Greetings({ message, duration }) {
     const [animationPlay, setAnimationPlay] = useState(true);
+    const [Display, setDisplay] = useState("flex")
 
-    const changeAnimation = setTimeout(() => {
-        setAnimationPlay(false);
-        clearTimeout(changeAnimation);
-    }, duration ? duration : 3500);
+    useEffect(() => {
+        const changeAnimation = setTimeout(() => {
+            setAnimationPlay(false);
+            clearTimeout(changeAnimation);
+        }, duration ? duration : 1500);
+
+        if (!animationPlay)
+            setTimeout(() => {
+                setDisplay("none")
+            }, 1100);
+    }, [animationPlay, duration])
 
     return (
-        <div className={styles.container}>
-            <div className={`notSelected ${styles.textContainer} ${animationPlay ? styles.open : styles.close}`}>
-                <span className={`notSelected ${styles.rectangleText} ${animationPlay ? styles.open : styles.close}`}>
-                    {message ? message : "Hello There!"}
-                </span>
+        <div className={styles.outer}>
+            <div className={styles.container}
+                style={{
+                    display: Display
+                }}
+            >
+                <div className={`notSelected ${styles.textContainer} ${animationPlay ? styles.open : styles.close}`}>
+                    <span className={`notSelected ${styles.rectangleText} ${animationPlay ? styles.open : styles.close}`}>
+                        {message ? message : "Hello There!"}
+                    </span>
+                </div>
             </div>
         </div>
     )

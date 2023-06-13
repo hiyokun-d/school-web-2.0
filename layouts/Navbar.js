@@ -24,7 +24,7 @@ export default function Navbar({ children }) {
 
     return (
         <>
-            <div ref={navbar} className={`${nav.navcontainer} notselected`}>
+            <div ref={navbar} className={`${nav.navcontainer} notSelected`}>
                 <ul>
                     <li>
                         <Link href={"/"}>Home</Link>
@@ -51,9 +51,7 @@ export default function Navbar({ children }) {
             </div>
 
             {/* when the navigation bar is off from the screen this will appears and change the navbar */}
-            <div
-                className={`${nav.navoutscreen} notselected ${outscreen ? nav.outscreen : nav.inscreen}`}
-            >
+            <div className={`${nav.navoutscreen} notSelected ${outscreen ? nav.outscreen : nav.inscreen}`}>
                 <ul>
                     <li>
                         <Link href={"/"}>Home</Link>
