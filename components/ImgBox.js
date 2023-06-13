@@ -47,19 +47,19 @@ const ImgBox = ({
 	};
 	return (
 		<div className={`${imageStyle.show} hide notselected`} onClick={showHandler}>
+			<Loading ElementComplete={load} />
 			<div className={`${imageStyle.container} hide notselected ${imageStyle[className]}`}>
-				<Loading ElementComplete={load} />
-					<Image
-						fill
-						src={ClickedImg}
-						alt="Image previewer"
-						className={imageStyle.sontol}
-						draggable={"false"}
-						quality={100}
-						loading="eager"
-						onError={handleLoadError}
-						onLoadingComplete={handleLoadComplete}
-					/>
+				<Image
+					fill
+					src={ClickedImg}
+					alt="Image previewer"
+					className={imageStyle.sontol}
+					draggable={"false"}
+					quality={100}
+					loading="eager"
+					onError={handleLoadError}
+					onLoadingComplete={handleLoadComplete}
+				/>
 				<span>
 					{currentIndex + 1} / {totalCurrentIndex}
 				</span>
