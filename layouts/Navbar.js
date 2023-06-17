@@ -27,7 +27,7 @@ export default function Navbar({ children }) {
             <div ref={navbar} className={`${nav.navcontainer} notSelected`}>
                 <ul>
                     <li>
-                        <Link href={"/"}>Home</Link>
+                        <Link href={"/HiyoHouse/Home"}>Home</Link>
                     </li>
                     <li>
                         <Link href={"/about-ur-mom/about"}>About Us</Link>
@@ -54,7 +54,7 @@ export default function Navbar({ children }) {
             <div className={`${nav.navoutscreen} notSelected ${outscreen ? nav.outscreen : nav.inscreen}`}>
                 <ul>
                     <li>
-                        <Link href={"/"}>Home</Link>
+                        <Link href={"/HiyoHouse/Home"}>Home</Link>
                     </li>
                     <li>
                         <Link href={"/about-ur-mom/about"}>About Us</Link>
