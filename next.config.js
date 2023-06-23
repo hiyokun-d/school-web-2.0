@@ -13,6 +13,9 @@ const nextConfig = {
       },
       {
         hostname: "cloudflare-ipfs.com"
+      },
+      {
+        hostname: "placeimg.com"
       }
     ],
   }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat&family=Pacifico&family=Sawarabi+Mincho&family=Tilt+Prism&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=Fira+Sans&family=Inder&family=Orienta&family=Poppins&display=swap);
 
 * {
 	box-sizing: border-box;
@@ -6,9 +6,9 @@
 
 body {
 	margin: 0;
-	font-family: "Roboto Slab", serif;
 	background-color: rgb(74, 74, 74);
 	overflow-x: hidden;
+	font-family: 'Fira Sans', sans-serif;
 }
 
 .notSelected {

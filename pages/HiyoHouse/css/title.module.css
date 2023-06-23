@@ -87,6 +87,7 @@
 	top: 10px;
 	margin-bottom: -30px;
 	border-bottom: 2px double rgb(172, 225, 255);
+	font-family: 'Orienta', sans-serif;
 }
 
 .container {
@@ -126,14 +127,16 @@
 .subElement .description {
 	width: 500px;
 	padding: 10px;
-	text-align: left;
-	font-size: 25px;
+	text-align: justify;
+	font-size: 17px;
 	position: relative;
 	bottom: 80px;
 	margin-left: 20px;
 	border-left: 4px solid rgba(60, 60, 60, 0.462);
 	border-right: 4px dashed rgba(60, 60, 60, 0.196);
 	height: 320px;
+	letter-spacing: 4px;
+	line-height: 1.8rem;
 }
 
 .subElement .description p {

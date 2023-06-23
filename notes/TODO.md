@@ -10,14 +10,17 @@
 - [ ] Design the home page intro that maybe we can change it into simpler
 - [ ] Remove some useless buttons on the home page and navbar, and so on
 - [ ] make a custom slider for the teachers section maybe like loading bar or something
+- [ ] change navigation bar design that more simple and responsive at the same time
 
 ### Now:
 
-- [ ] change fonts to something that more aesthetic
+- [ ] make a majors section bottom of the teachers section
+- [ ] put some animation on the majors section like chemistry gif or anything else
 
 ### Done:
 
-- [x] make side scroll for it
+- [x] change fonts to something that more aesthetic ✅
+- [x] make side scroll for it ✅
 - [x] Renew the home page intro or maybe we can say landing page ✅
 - [x] Create a storage to store any documents and pictures ✅
 - [x] Renew some system into some new tech ✅

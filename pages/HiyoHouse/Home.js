@@ -3,11 +3,10 @@ import Tilt from "react-parallax-tilt"
 import Image from 'next/image';
 import indexCSS from "./css/home.module.css" /* index css file that main of the page */
 
-import FormatQuoteRoundedIcon from '@mui/icons-material/FormatQuoteRounded';
-
 //? sub style sheet file
 import titleCSS from "./css/title.module.css"
 import teachersCSS from "./css/teachersData.module.css"
+import majorsCSS from "./css/majors.module.css"
 
 function TitleScreen() {
   const images = useRef([]);
@@ -187,11 +186,81 @@ function TeachersData() {
   )
 }
 
+function ListOfMajors() {
+  const elementRef = useRef(null)
+
+  useEffect(() => {
+    const element = elementRef.current;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(majorsCSS.animate);
+        }
+      });
+    });
+
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
+
+  return (
+    <div className={majorsCSS.container} ref={elementRef}>
+      <h1>List Of majors</h1>
+      <div className={majorsCSS.content}>
+        <div className={`${majorsCSS.majorContainer} ${majorsCSS.science}`}>
+          <h1>science</h1>
+          <p>
+            Veniam et quis ad proident eu do sit deserunt laboris.
+            Aliqua velit fugiat velit fugiat.
+            Qui do voluptate et esse fugiat.
+            Occaecat sit ad est laborum eiusmod magna.
+            Anim sunt ut proident eiusmod est quis culpa ex
+            excepteur consectetur proident deserunt aliqua.
+            Pariatur qui do elit velit non in tempor esse anim cillum ipsum qui laborum incididunt.
+          </p>
+          <div className={majorsCSS.image}>
+            <Image src={"/images/icon/chemistry.gif"} width={100} height={100} alt='YEAH SCIENCE!'/>
+            <Image src={"/images/icon/chemistry2.gif"} width={100} height={100} alt='YEAH SCIENCE!'/>
+            <Image src={"/images/icon/chemistry3.gif"} width={100} height={100} alt='YEAH SCIENCE!'/>
+            <Image src={"/images/icon/microscope.gif"} width={100} height={100} alt='YEAH SCIENCE!'/>
+          </div>
+        </div>
+        <div className={`${majorsCSS.majorContainer} ${majorsCSS.social}`}>
+          <h1>social science</h1>
+          <p>
+            Veniam et quis ad proident eu do sit deserunt laboris.
+            Aliqua velit fugiat velit fugiat.
+            Qui do voluptate et esse fugiat.
+            Occaecat sit ad est laborum eiusmod magna.
+            Anim sunt ut proident eiusmod est quis culpa ex
+            excepteur consectetur proident deserunt aliqua.
+            Pariatur qui do elit velit non in tempor esse anim cillum ipsum qui laborum incididunt.
+          </p>
+          <div className={majorsCSS.image}>
+            <Image src={"/images/icon/development.png"} width={50} height={50} alt={"I'M AN INTROVERT BRO"} />
+            <Image src={"/images/icon/idea.png"} width={80} height={80} alt={"I'M AN INTROVERT BRO"} />
+            <Image src={"/images/icon/social-science(1).png"} width={70} height={70} alt={"I'M AN INTROVERT BRO"} />
+            <Image src={"/images/icon/social-science.png"} width={50} height={50} alt={"I'M AN INTROVERT BRO"} />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function Home() {
   return (
     <div className={indexCSS.container}>
       <TitleScreen />
       <TeachersData />
+      <ListOfMajors />
     </div>
   )
 }
