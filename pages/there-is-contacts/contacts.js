@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import styles from "../../style/contacts.module.css";
+import styles from "./contacts.module.css";
 import Greetings from "../../components/Greetings";
+import { Facebook, Instagram, YouTube } from "@mui/icons-material";
 
 const Contacts = () => {
 
 
-	/* if you want to change the open animation the box
+	/* 
+		if you want to change the open animation the box
 	   you can change it in css contacts and search for background class
 	   then change the animation delay value
 	*/
@@ -25,7 +27,7 @@ const Contacts = () => {
 						method="GET"
 						encType={"text/plain"}
 					>
-						<div>
+						<div className={styles.inputDiv}>
 							<label>
 								email
 							</label>
@@ -39,7 +41,7 @@ const Contacts = () => {
 								size={40}
 							/>
 						</div>
-						<div>
+						<div className={styles.inputDiv}>
 							<label>
 								subjek pertanyaan
 								<br />
@@ -54,7 +56,7 @@ const Contacts = () => {
 								size={40}
 							/>
 						</div>
-						<div>
+						<div className={styles.inputDiv}>
 							<label>
 								Pesan atau pertanyaan
 								<br />
@@ -95,7 +97,23 @@ const Contacts = () => {
 			</div>
 
 			<div className={styles["another-social-media"]}>
-
+				<ul>
+					<li>
+						<a href="">
+							<YouTube fontSize="large" className={styles.youtube} />
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<Instagram fontSize="large" className={styles.instagram} />
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<Facebook fontSize="large" className={styles.facebook} />
+						</a>
+					</li>
+				</ul>
 			</div>
 		</div>
 	);

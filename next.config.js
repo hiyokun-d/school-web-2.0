@@ -16,6 +16,9 @@ const nextConfig = {
       },
       {
         hostname: "placeimg.com"
+      },
+      {
+        hostname: "cdn.discordapp.com"
       }
     ],
   }

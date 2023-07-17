@@ -1,7 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Tilt from "react-parallax-tilt"
 import Image from 'next/image';
 import indexCSS from "./css/home.module.css" /* index css file that main of the page */
+
+import { ScrollAnimate } from '../../functions/ScrollAnimate';
 
 //? sub style sheet file
 import titleCSS from "./css/title.module.css"
@@ -72,114 +74,47 @@ function TitleScreen() {
 }
 
 function TeachersData() {
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("/teachers.config.json")
+      const resolve = await response.json()
+      setData(resolve)
+    }
+
+    fetchData()
+  }, [])
+
+  /* 
+
+  */
+
   return (
     <>
       <div className={teachersCSS.container}>
         <h1>Teachers</h1>
 
         <div className={teachersCSS.cardCollections}>
-          <div className={teachersCSS.card}>
-            <Tilt className={`${teachersCSS.paralax} paralaxEffect`} tiltMaxAngleX={15} tiltMaxAngleY={15} transitionSpeed={400} perspective={500}>
-              <div className={teachersCSS.box}>
-                <div className={`${teachersCSS.elements} ${teachersCSS.bg}`}></div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.content}`}>
-                  <p>beliau mempunyai jabatan sebagai bla bla bla dan sebagainya ini itu ini itu aneh</p>
+          {data.map((resolve, index) => {
+            return (<div className={teachersCSS.card} key={index}>
+              <Tilt className={`${teachersCSS.paralax} paralaxEffect`} tiltMaxAngleX={15} tiltMaxAngleY={15} transitionSpeed={400} perspective={500}>
+                <div className={teachersCSS.box}>
+                  <div className={`${teachersCSS.elements} ${teachersCSS.bg}`}></div>
+                  <div className={`${teachersCSS.elements} ${teachersCSS.content}`}>
+                    <p>{resolve.description}</p>
+                  </div>
+                  <div className={`${teachersCSS.elements} ${teachersCSS.name}`}>
+                    <h2>{resolve.name}</h2>
+                  </div>
+                  <div className={`${teachersCSS.elements} ${teachersCSS.imgBx}`}>
+                    <Image src={resolve.avatar} width={128} height={128} alt='Hello World' />
+                  </div>
+                  <div className={teachersCSS.card}></div>
                 </div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.name}`}>
-                  <h2>Hailey Reinger</h2>
-                </div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.imgBx}`}>
-                  <Image src={"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/258.jpg"} width={128} height={128} alt='Hello World' />
-                </div>
-                <div className={teachersCSS.card}></div>
-              </div>
-            </Tilt>
-          </div>
-          <div className={teachersCSS.card}>
-            <Tilt className={`${teachersCSS.paralax} paralaxEffect`} tiltMaxAngleX={15} tiltMaxAngleY={15} transitionSpeed={400} perspective={500}>
-              <div className={teachersCSS.box}>
-                <div className={`${teachersCSS.elements} ${teachersCSS.bg}`}></div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.content}`}>
-                  <p>beliau mempunyai jabatan sebagai bla bla bla dan sebagainya ini itu ini itu aneh</p>
-                </div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.name}`}>
-                  <h2>Hailey Reinger</h2>
-                </div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.imgBx}`}>
-                  <Image src={"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/258.jpg"} width={128} height={128} alt='Hello World' />
-                </div>
-                <div className={teachersCSS.card}></div>
-              </div>
-            </Tilt>
-          </div>
-          <div className={teachersCSS.card}>
-            <Tilt className={`${teachersCSS.paralax} paralaxEffect`} tiltMaxAngleX={15} tiltMaxAngleY={15} transitionSpeed={400} perspective={500}>
-              <div className={teachersCSS.box}>
-                <div className={`${teachersCSS.elements} ${teachersCSS.bg}`}></div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.content}`}>
-                  <p>beliau mempunyai jabatan sebagai bla bla bla dan sebagainya ini itu ini itu aneh</p>
-                </div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.name}`}>
-                  <h2>Hailey Reinger</h2>
-                </div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.imgBx}`}>
-                  <Image src={"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/258.jpg"} width={128} height={128} alt='Hello World' />
-                </div>
-                <div className={teachersCSS.card}></div>
-              </div>
-            </Tilt>
-          </div>
-          <div className={teachersCSS.card}>
-            <Tilt className={`${teachersCSS.paralax} paralaxEffect`} tiltMaxAngleX={15} tiltMaxAngleY={15} transitionSpeed={400} perspective={500}>
-              <div className={teachersCSS.box}>
-                <div className={`${teachersCSS.elements} ${teachersCSS.bg}`}></div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.content}`}>
-                  <p>beliau mempunyai jabatan sebagai bla bla bla dan sebagainya ini itu ini itu aneh</p>
-                </div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.name}`}>
-                  <h2>Hailey Reinger</h2>
-                </div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.imgBx}`}>
-                  <Image src={"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/258.jpg"} width={128} height={128} alt='Hello World' />
-                </div>
-                <div className={teachersCSS.card}></div>
-              </div>
-            </Tilt>
-          </div>
-          <div className={teachersCSS.card}>
-            <Tilt className={`${teachersCSS.paralax} paralaxEffect`} tiltMaxAngleX={15} tiltMaxAngleY={15} transitionSpeed={400} perspective={500}>
-              <div className={teachersCSS.box}>
-                <div className={`${teachersCSS.elements} ${teachersCSS.bg}`}></div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.content}`}>
-                  <p>beliau mempunyai jabatan sebagai bla bla bla dan sebagainya ini itu ini itu aneh</p>
-                </div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.name}`}>
-                  <h2>Hailey Reinger</h2>
-                </div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.imgBx}`}>
-                  <Image src={"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/258.jpg"} width={128} height={128} alt='Hello World' />
-                </div>
-                <div className={teachersCSS.card}></div>
-              </div>
-            </Tilt>
-          </div>
-          <div className={teachersCSS.card}>
-            <Tilt className={`${teachersCSS.paralax} paralaxEffect`} tiltMaxAngleX={15} tiltMaxAngleY={15} transitionSpeed={400} perspective={500}>
-              <div className={teachersCSS.box}>
-                <div className={`${teachersCSS.elements} ${teachersCSS.bg}`}></div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.content}`}>
-                  <p>beliau mempunyai jabatan sebagai bla bla bla dan sebagainya ini itu ini itu aneh</p>
-                </div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.name}`}>
-                  <h2>Hailey Reinger</h2>
-                </div>
-                <div className={`${teachersCSS.elements} ${teachersCSS.imgBx}`}>
-                  <Image src={"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/258.jpg"} width={128} height={128} alt='Hello World' />
-                </div>
-                <div className={teachersCSS.card}></div>
-              </div>
-            </Tilt>
-          </div>
+              </Tilt>
+            </div>)
+          })}
         </div>
       </div>
     </>
@@ -188,27 +123,7 @@ function TeachersData() {
 
 function ListOfMajors() {
   const elementRef = useRef(null)
-
-  useEffect(() => {
-    const element = elementRef.current;
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add(majorsCSS.animate);
-        }
-      });
-    });
-
-    if (element) {
-      observer.observe(element);
-    }
-
-    return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
-    };
-  }, []);
+  ScrollAnimate(elementRef, majorsCSS)
 
   return (
     <div className={majorsCSS.container} ref={elementRef}>
@@ -226,10 +141,10 @@ function ListOfMajors() {
             Pariatur qui do elit velit non in tempor esse anim cillum ipsum qui laborum incididunt.
           </p>
           <div className={majorsCSS.image}>
-            <Image src={"/images/icon/chemistry.gif"} width={100} height={100} alt='YEAH SCIENCE!'/>
-            <Image src={"/images/icon/chemistry2.gif"} width={100} height={100} alt='YEAH SCIENCE!'/>
-            <Image src={"/images/icon/chemistry3.gif"} width={100} height={100} alt='YEAH SCIENCE!'/>
-            <Image src={"/images/icon/microscope.gif"} width={100} height={100} alt='YEAH SCIENCE!'/>
+            <Image src={"/images/icon/chemistry.gif"} width={100} height={100} alt='YEAH SCIENCE!' />
+            <Image src={"/images/icon/chemistry2.gif"} width={100} height={100} alt='YEAH SCIENCE!' />
+            <Image src={"/images/icon/chemistry3.gif"} width={100} height={100} alt='YEAH SCIENCE!' />
+            <Image src={"/images/icon/microscope.gif"} width={100} height={100} alt='YEAH SCIENCE!' />
           </div>
         </div>
         <div className={`${majorsCSS.majorContainer} ${majorsCSS.social}`}>

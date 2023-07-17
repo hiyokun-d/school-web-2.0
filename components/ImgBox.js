@@ -47,8 +47,8 @@ const ImgBox = ({
 	};
 	return (
 		<div className={`${imageStyle.show} hide notselected`} onClick={showHandler}>
-			<Loading ElementComplete={load} />
 			<div className={`${imageStyle.container} hide notselected ${imageStyle[className]}`}>
+			<Loading ElementComplete={load} />
 				<Image
 					fill
 					src={ClickedImg}

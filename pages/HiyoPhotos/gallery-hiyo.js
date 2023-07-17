@@ -15,7 +15,7 @@ export default function gallery_hiyo() {
                 <ImgPreviewer
                     className_div={`${Gallery['gallery-img-div']}`}
                     className_img={`${Gallery['gallery-img']}`}
-                    src={image.imageCollections}
+                    src={Images}
                 />
             </div>
         </>

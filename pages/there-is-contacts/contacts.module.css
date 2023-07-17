@@ -38,7 +38,7 @@
 .contact > h1,
 .contact > p,
 .contact > .contact-mail-message {
-	margin-top: -10px;
+	margin-top: -105px;
 }
 
 .contact .contact-mail-message input {
@@ -54,7 +54,11 @@
 		margin-right 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 	border: 5px double rgb(234, 255, 245);
-	margin-top: 5px;
+	margin-top: 15px;
+}
+
+.contact .contact-mail-message .inputDiv {
+	margin-top: 25px
 }
 
 .contact .contact-mail-message input::placeholder {
@@ -215,7 +219,7 @@
 		border: 1px double white;
 		box-shadow: 0 0 52px rgb(250, 182, 182);
 	}
-	
+
 	25% {
 		border: 5px solid white;
 		box-shadow: 0 0 72px white;
@@ -239,4 +243,51 @@
 		border: 0px solid white;
 		transform: translateX(-700px);
 	}
+}
+
+.another-social-media {
+	position: relative;
+	top: 200px;
+	right: 10px;
+	width: 600px;
+	display: flex;
+	justify-content: center;
+}
+
+.another-social-media ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	width: 400px;
+	list-style: none;
+}
+
+.another-social-media a {
+	color: white;
+}
+
+.another-social-media ul li {
+	transition: all 0.2s;
+	color: white;
+	cursor:pointer;
+}
+
+.another-social-media ul li:hover {
+	transform: scale(1.5);
+}
+
+.youtube, .facebook, .instagram {
+	transition: all 0.5s;
+}
+
+.another-social-media ul .youtube:hover {
+	color: #ff0000;
+}
+
+.another-social-media ul .facebook:hover {
+	color: #537cd5;
+}
+
+.another-social-media ul .instagram:hover {
+	color: #cd486b
 }

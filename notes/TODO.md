@@ -4,21 +4,20 @@
     1. Images ✅
     2. Pages
 - [ ] Remove images config on `next.config.js`
-- [ ] Make the app responsive
+- [ ] Make the app responsive (restyle all the page into mobile, tab also watch if it possible)
 - [ ] Implement dark mode and light mode
 - [ ] Make a custom scrollBar
 - [ ] Design the home page intro that maybe we can change it into simpler
-- [ ] Remove some useless buttons on the home page and navbar, and so on
 - [ ] make a custom slider for the teachers section maybe like loading bar or something
 - [ ] change navigation bar design that more simple and responsive at the same time
 
 ### Now:
 
-- [ ] make a majors section bottom of the teachers section
-- [ ] put some animation on the majors section like chemistry gif or anything else
-
 ### Done:
 
+- [x] Remove some useless buttons on the home page and navbar, and so on ✅
+- [x] put some animation on the majors section like chemistry gif or anything else ✅
+- [x] make a majors section bottom of the teachers section ✅
 - [x] change fonts to something that more aesthetic ✅
 - [x] make side scroll for it ✅
 - [x] Renew the home page intro or maybe we can say landing page ✅

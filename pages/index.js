@@ -1,15 +1,19 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
+let timeoutTime = 5000
 const Index = () => {
     const router = useRouter();
 
     useEffect(() => {
         const timeout = setTimeout(() => {
             router.replace('/HiyoHouse/Home'); // Replace "/home" with the actual path of your home page
-        }, 5000);
+        }, timeoutTime);
 
-        return () => clearTimeout(timeout);
+        return () => {
+            clearTimeout(timeout);
+            timeoutTime = -100
+        }
     }, [router]);
 
     return (
