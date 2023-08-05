@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 import nav from "../style/navBar.module.css"
 
-export default function Navbar({ children }) {
+export default function Navbar() {
     const navbar = useRef(null);
     const [outscreen, checkScreen] = useState(true);
 
@@ -76,8 +76,6 @@ export default function Navbar({ children }) {
                     </li>
                 </ul>
             </div>
-
-            {children}
         </>
     );
 }

@@ -1,8 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Fira+Sans&family=Inder&family=Orienta&family=Poppins&display=swap);
-
-* {
-	box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Signika+Negative:wght@700&display=swap');
 
 body {
 	margin: 0;

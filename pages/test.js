@@ -1,95 +1,77 @@
-import { useEffect, useRef } from 'react';
-import titleCSS from "../style/test.module.css"
-import Tilt from "react-parallax-tilt"
-import FormatQuoteRoundedIcon from '@mui/icons-material/FormatQuoteRounded';
 import Image from 'next/image';
+import style from '../style/intro.module.css'
+import { useEffect, useState } from 'react';
 
 const Test = () => {
-  const images = useRef([]);
-  const currentIndex = useRef(0);
+	const [word, setWord] = useState(null);
+	const [changeWord, setChangeWord] = useState(true);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (images.current.length === 0) return;
+	const words = [
+		"this is", // English
+		"ini adalah", // Indonesian
+		"これは", // Japanese
+		"esto es", // Spanish
+		"这是", // Chinese (Simplified)
+		"это", // Russian
+		"ceci est", // French
+		"questo è", // Italian
+		"ini iya", // Banjar
+		"inggih", // Javanese
+		"utuk", // Sundanese
+		"toulo", // Bugis
+		"inne", // Makassar
+	];
 
-      images.current[currentIndex.current]?.classList.remove(titleCSS['fade-in']);
-      images.current[currentIndex.current]?.classList.add(titleCSS['fade-out']);
+	useEffect(() => {
+		let interval;
 
-      currentIndex.current = (currentIndex.current + 1) % images.current.length;
+		const randomWord = () => {
+			setWord(words[Math.floor(Math.random() * words.length)]);
+		};
 
-      images.current[currentIndex.current]?.classList.remove(titleCSS['fade-out']);
-      images.current[currentIndex.current]?.classList.add(titleCSS['fade-in']);
-    }, 3000);
+		interval = setInterval(() => {
+			if (changeWord) {
+				randomWord();
+			}
+		}, 100);
 
-    return () => clearInterval(interval);
-  }, []);
+		setTimeout(() => {
+			setChangeWord(false);
+		}, 5000); // Stop word changes after 3 seconds
 
-    const handleImageRef = (el, index) => {
-        if (el) {
-            images.current[index] = el;
-        }
-    }
+		return () => clearInterval(interval);
+	}, [changeWord]);
 
+	useEffect(() => {
+		if (!changeWord) {
+			setWord("WE ARE");
+		}
+	}, [changeWord]);
+	
+	return (
+		<div className={style.container}>
+			<div class={style.context}>
+				<Image className={style.logo} src={"/images/icon/hiyo-logo.png"} alt="this website make by hiyo, and just ME MAKE THIS WEBSITE AS F*CK" width={500} height={500} />
+				<h1 className={style.title}>{word}</h1>
+				<h1 className={style.subtitle}>SMANSA</h1>
+				<Image src={"/images/icon/icon.png"} alt="this website make by hiyo, and just ME MAKE THIS WEBSITE AS F*CK"  width={468} height={470} />
+			</div>
 
-  return (
-		<>
-			<header className={titleCSS.titleScreen}>
-				<div className={titleCSS.container}>
-					<h1>SMANSA</h1>
-
-					<div className={titleCSS.subElement}>
-						<div className={titleCSS.logo}>
-							<Image
-								className={titleCSS.image}
-								src={"/images/icon/icon.png"}
-								width={368}
-								height={370}
-								alt="school that in indonesia maybe you don't know but now you know"
-							/>
-						</div>
-						<div className={titleCSS.description}>
-							<h1>About</h1>
-							<p>
-								Ut nisi laborum deserunt eiusmod fugiat et tempor. Ullamco
-								eiusmod id cupidatat officia est pariatur. Cupidatat nostrud
-								dolor sunt commodo amet ullamco qui eiusmod excepteur irure ad
-								culpa amet. Sint voluptate laborum reprehenderit dolor minim id
-								proident aute commodo cillum.
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div className={titleCSS.imageContainer}>
-					<div className={titleCSS.slideshow}>
-						<Image
-							width={1200}
-							height={675}
-							ref={(el) => handleImageRef(el, 0)}
-							src="/images/slider/slider.jpg"
-							alt="Image 1"
-							className={`notSelected ${titleCSS["fade-in"]}`}
-						/>
-						<Image
-							width={1200}
-							height={675}
-							ref={(el) => handleImageRef(el, 1)}
-							src="/images/slider/slider2.jpg"
-							alt="Image 2"
-							className="notSelected"
-						/>
-						<Image
-							width={1200}
-							height={675}
-							ref={(el) => handleImageRef(el, 2)}
-							src="/images/slider/slider3.jpg"
-							alt="Image 3"
-							className="notSelected"
-						/>
-					</div>
-				</div>
-			</header>
-		</>
+			<div class={style.area} >
+				<ul class={style.circles}>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div >
+		</div>
 	);
 };
 

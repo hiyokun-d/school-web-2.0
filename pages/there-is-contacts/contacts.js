@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./contacts.module.css";
 import Greetings from "../../components/Greetings";
 import { Facebook, Instagram, YouTube } from "@mui/icons-material";
+import Navbar from "../../components/Navbar";
 
 const Contacts = () => {
 
@@ -13,6 +14,8 @@ const Contacts = () => {
 	*/
 
 	return (
+		<>
+		<Navbar />
 		<div className={styles.container}>
 			<Greetings message={"Contact"} />
 
@@ -99,23 +102,24 @@ const Contacts = () => {
 			<div className={styles["another-social-media"]}>
 				<ul>
 					<li>
-						<a href="">
+						<a href="https://youtube.com/@smanegeri1bantaeng688">
 							<YouTube fontSize="large" className={styles.youtube} />
 						</a>
 					</li>
 					<li>
-						<a href="">
+						<a href="https://instagram.com/smansabantaeng?igshid=MzRlODBiNWFlZA==">
 							<Instagram fontSize="large" className={styles.instagram} />
 						</a>
 					</li>
 					<li>
-						<a href="">
+						<a href="https://www.facebook.com/sman1bantaeng.official">
 							<Facebook fontSize="large" className={styles.facebook} />
 						</a>
 					</li>
 				</ul>
 			</div>
 		</div>
+		</>
 	);
 };
 

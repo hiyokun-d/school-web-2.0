@@ -9,65 +9,16 @@ import { ScrollAnimate } from '../../functions/ScrollAnimate';
 import titleCSS from "./css/title.module.css"
 import teachersCSS from "./css/teachersData.module.css"
 import majorsCSS from "./css/majors.module.css"
+import Navbar from '../../components/Navbar';
 
 function TitleScreen() {
-  const images = useRef([]);
-  const currentIndex = useRef(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (images.current.length === 0) return;
-
-      images.current[currentIndex.current]?.classList.remove(titleCSS['fade-in']);
-      images.current[currentIndex.current]?.classList.add(titleCSS['fade-out']);
-
-      currentIndex.current = (currentIndex.current + 1) % images.current.length;
-
-      images.current[currentIndex.current]?.classList.remove(titleCSS['fade-out']);
-      images.current[currentIndex.current]?.classList.add(titleCSS['fade-in']);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleImageRef = (el, index) => {
-    if (el) {
-      images.current[index] = el;
-    }
-  };
-
   return (
     <>
       <header className={titleCSS.titleScreen}>
-        <div className={titleCSS.container}>
-          <h1>SMANSA</h1>
-
-
-          <div className={titleCSS.subElement} >
-            <div className={titleCSS.logo}>
-              <Image className={titleCSS.image} src={"/images/icon/icon.png"} width={368} height={370} alt="school that in indonesia maybe you don't know but now you know" />
-            </div>
-            <div className={titleCSS.description}>
-              <h1>About</h1>
-              <p>
-                Ut nisi laborum deserunt eiusmod fugiat et tempor.
-                Ullamco eiusmod id cupidatat officia est pariatur.
-                Cupidatat nostrud dolor sunt commodo amet ullamco
-                qui eiusmod excepteur irure ad culpa amet. Sint
-                voluptate laborum reprehenderit dolor minim id
-                proident aute commodo cillum.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className={titleCSS.imageContainer}>
-          <div className={titleCSS.slideshow}>
-            <Image width={1200} height={675} ref={el => handleImageRef(el, 0)} src="/images/slider/slider.jpg" alt="Image 1" className={`notSelected ${titleCSS['fade-in']}`} />
-            <Image width={1200} height={675} ref={el => handleImageRef(el, 1)} src="/images/slider/slider2.jpg" alt="Image 2" className='notSelected' />
-            <Image width={1200} height={675} ref={el => handleImageRef(el, 2)} src="/images/slider/slider3.jpg" alt="Image 3" className='notSelected' />
-          </div>
-        </div>
+        <div className={titleCSS.border}></div>
+          <h1>WE ARE</h1>
+          <Image src={"/images/icon/icon.png"} alt="this website make by hiyo, and just ME MAKE THIS WEBSITE? YES AND I HATE IT F*CK" width={468} height={470} />
+          <h2>SMANSA</h2>
       </header>
     </>
   )
@@ -172,11 +123,14 @@ function ListOfMajors() {
 
 function Home() {
   return (
-    <div className={indexCSS.container}>
-      <TitleScreen />
-      <TeachersData />
-      <ListOfMajors />
-    </div>
+    <>
+      <Navbar />
+      <div className={indexCSS.container}>
+        <TitleScreen />
+        <TeachersData />
+        <ListOfMajors />
+      </div>
+    </>
   )
 }
 
