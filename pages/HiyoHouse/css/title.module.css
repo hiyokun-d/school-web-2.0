@@ -1,0 +1,86 @@
+.titleScreen {
+	text-align: center;
+	max-width: 1500px;
+	width: 100vw;
+	height: 100vh;
+	font-size: 50px;
+	display: flex;
+	align-items: center;
+    justify-content: space-evenly;
+	border-bottom: 2px dashed rgba(255, 125, 125, 0.628)
+}
+
+.titleScreen h1 {
+	font-family: "Kanit", sans-serif;
+	text-shadow: 0px 0px 10px black;
+	animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	white-space: nowrap;
+	position: absolute;
+	left: 30px;
+	font-size: 120px;
+}
+
+.titleScreen h2 {
+	font-family: 'Signika Negative', sans-serif;
+	font-size: 120px;
+	animation: tracking-in-contract-bck-bottom 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation-delay: 1s;
+	position: absolute;
+	right: 30px
+}
+
+.titleScreen img {
+	animation: flip-in-diag-2-br 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation-delay: 1.7s;
+}
+
+.border {
+	border-bottom: 4px double rgb(209, 209, 209);
+	border-top: 7px double white;
+    max-width: 99vw;
+	width: 99vw;
+    height: 452px;
+    position: absolute;
+	z-index: 1
+}
+
+@keyframes flip-in-diag-2-br {
+	0% {
+    transform: rotate3d(-1, 1, 0, -80deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate3d(1, 1, 0, 0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes tracking-in-contract-bck-bottom {
+  0% {
+    letter-spacing: 1em;
+    transform: translateZ(400px) translateY(300px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes tracking-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    transform: translateZ(-700px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}

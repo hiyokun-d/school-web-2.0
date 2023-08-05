@@ -4,6 +4,7 @@ import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { ExpandMoreTwoTone } from "@mui/icons-material";
 
 import about from "../../style/about.module.css"
+import Navbar from "../../components/Navbar";
 
 const AboutusPage = () => {
     const [expanded, setExpand] = useState("");
@@ -11,7 +12,7 @@ const AboutusPage = () => {
     const handleChange = (Panel) => (event, newExpanded) => setExpand(newExpanded ? Panel : false);
     return (
         <>
-
+            <Navbar />
             <div className={`${about['aboutus-container']}`}>
                 <h1>Apa yang ingin kamu tau dari smansa?</h1>
                 <Accordion

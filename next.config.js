@@ -10,6 +10,15 @@ const nextConfig = {
 
       {
         hostname: "picsum.photos"
+      },
+      {
+        hostname: "cloudflare-ipfs.com"
+      },
+      {
+        hostname: "placeimg.com"
+      },
+      {
+        hostname: "cdn.discordapp.com"
       }
     ],
   }
