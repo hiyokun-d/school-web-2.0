@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import Tilt from "react-parallax-tilt"
 import Image from 'next/image';
 import indexCSS from "./css/home.module.css" /* index css file that main of the page */
 
@@ -16,9 +15,10 @@ function TitleScreen() {
     <>
       <header className={titleCSS.titleScreen}>
         <div className={titleCSS.border}></div>
-          <h1>WE ARE</h1>
-          <Image src={"/images/icon/icon.png"} alt="this website make by hiyo, and just ME MAKE THIS WEBSITE? YES AND I HATE IT F*CK" width={468} height={470} />
-          <h2>SMANSA</h2>
+        <h1>WE ARE</h1>
+        <Image
+          src={"/images/icon/icon.png"} alt="this website make by hiyo, and just ME MAKE THIS WEBSITE? YES AND I HATE IT F*CK" width={468} height={470} />
+        <h2>SMANSA</h2>
       </header>
     </>
   )
@@ -46,25 +46,21 @@ function TeachersData() {
       <div className={teachersCSS.container}>
         <h1>Teachers</h1>
 
-        <div className={teachersCSS.cardCollections}>
+        <div className={teachersCSS.content}>
           {data.map((resolve, index) => {
-            return (<div className={teachersCSS.card} key={index}>
-              <Tilt className={`${teachersCSS.paralax} paralaxEffect`} tiltMaxAngleX={15} tiltMaxAngleY={15} transitionSpeed={400} perspective={500}>
-                <div className={teachersCSS.box}>
-                  <div className={`${teachersCSS.elements} ${teachersCSS.bg}`}></div>
-                  <div className={`${teachersCSS.elements} ${teachersCSS.content}`}>
+            return (
+              <div key={resolve} className={teachersCSS.contentContainer}>
+                <div className={teachersCSS.aboutContainer}>
+                  <div className={teachersCSS.about}>
+                    <Image src={resolve.avatar} width={150} height={150} alt='Hello World' />
+                    <h1>{resolve.name}</h1>
                     <p>{resolve.description}</p>
                   </div>
-                  <div className={`${teachersCSS.elements} ${teachersCSS.name}`}>
-                    <h2>{resolve.name}</h2>
-                  </div>
-                  <div className={`${teachersCSS.elements} ${teachersCSS.imgBx}`}>
-                    <Image src={resolve.avatar} width={128} height={128} alt='Hello World' />
-                  </div>
-                  <div className={teachersCSS.card}></div>
+
                 </div>
-              </Tilt>
-            </div>)
+                  <Image src={resolve.avatar} width={150} height={150} alt='Hello World' />
+              </div>
+            )
           })}
         </div>
       </div>
